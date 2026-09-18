@@ -9,15 +9,56 @@
 </head>
 <body>
     <header>
-        <h1>Kartu Multimedia Platform E-Learning</h1>
-        <p>Komponen multimedia responsif untuk platform e-learning kampus, memuat video, audio, dan ilustrasi sampul art direction.</p>
+        <h1 class="web-title">Kartu Multimedia Platform E-Learning</h1>
+        <p class="web-description">Komponen multimedia responsif untuk platform e-learning kampus, memuat video, audio, dan ilustrasi sampul art direction.</p>
     </header>
     <main>
-        <h2>Materi Mata Kuliah Hari Ini</h2>
+        <h2 class="main-title">Materi Mata Kuliah Hari Ini</h2>
         <article class="lecture-card lecture-card--live">
             
-        </article>
+            <picture class="lecture-card__cover">
+                <source media="(min-width: 768px)" srcset="assets/pmob.webp" type="image/webp">
+                <source media="(max-width: 767px)" srcset="assets/covmob.webp" type="image/webp">
+                <img src="assets/pmob.webp" alt="Ilustrasi sampul materi Pengantar Struktur Data">
+            </picture>
+ 
+            <section class="lecture-card__body">
+                <h2 class="lecture-card__title">Pemrograman Mobile &mdash; Pengenalan Flutter</h2>
+                <p class="lecture-card__description">Rekaman kuliah minggu ini membahas konsep dasar pemrograman web dengan pengenalan <strong>Flutter</strong></p>
+                <p class="lecture-card__guide">Klik untuk mulai menonton</p>
+            </section>
+ 
+            <section class="lecture-card__media">
+                <div class="lecture-card__media-video">
+                    <video class="lecture-card__video" controls poster="assets/pmob.webp">
+                        <source src="vidmob.mp4" type="video/mp4">
+                        <source src="vidmob.webm" type="video/webm">
+                        Video tidak dapat diputar di browser ini. <a href="materi-kuliah.mp4">Unduh videonya di sini</a>.
+                    </video>
+                </div>
 
+                <div class="lecture-card__video-summary">
+                    <h3>Tentang video ini</h3>
+                    <p class="lecture-card__summary-text">Video ini membahas pengenalan web melalui dasar HTML atau Hypertext Markup Language, yang menjadi pondasi utama dalam pengembangan halaman web.</p>
+                </div>
+
+                <div class="lecture-card__media-audio">
+                    <span class="lecture-card__audio-label">ALTERNATIF PEMBELAJARAN</span>
+                    <h4 class="lecture-card__audio-title">Dengarkan rekaman kuliah</h4>
+                    <p class="lecture-card__audio-description">Rekaman kuliah minggu ini membahas konsep dasar pemrograman web dengan pengenalan <strong>HTML</strong></p>
+                    <audio class="lecture-card__audio" controls preload="metadata">
+                        <source src="audweb.mp3" type="audio/mpeg">
+                        <source src="audweb.ogg" type="audio/ogg">
+                        Audio tidak dapat diputar di browser ini.
+                    </audio>
+                </div>
+            </section>
+
+            <footer class="lecture-card__footer">
+                <p>Sumber Video: <a href="https://youtu.be/rzTpk849ktA?si=EG42SGSJ7-KARohN" target="_blank" rel="noopener noreferrer">Youtube: idr corner</a></p>
+                <p>Disclaimer: Halaman ini dibuat untuk keperluan pembelajaran mata kuliah Pemrograman Web. Media video berasal dari sumber eksternal dan halaman ini bukan merupakan situs resmi dari pemilik media tersebut.</p>
+            </footer>
+        </article>
     </main>
 </body>
 </html>
