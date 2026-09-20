@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4 - Tata Letak</title>
+    <meta name="description" content="Prototipe portal jurnal ilmiah fakultas dengan tata letak tiga kolom responsif: sidebar, daftar artikel, dan kolom info.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="04-tugas-style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="main-nav">
+            <a href="#" class="site-nav-brand">Portal Jurnal</a>
+            <div class="site-nav-links">
+                <a href="#" class="nav-item">Beranda</a>
+                <a href="#" class="nav-item">Arsip</a>
+                <a href="#" class="nav-item">Kontak</a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="layout-container">
+
+        <aside class="layout-sidebar">
+            <h2 class="sidebar-title">Kategori Peminatan</h2>
+            <ul>
+                <li><a href="#">Rekayasa Perangkat Lunak</a></li>
+                <li><a href="#">Kecerdasan Buatan</a></li>
+                <li><a href="#">Jaringan Komputer</a></li>
+            </ul>
+        </aside>
+
+        <section class="main-layout">
+            <h1 class="main-title">Kumpulan Artikel</h1>
+            <div class="grid-artikel">
+                <article class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title h6">Analisis Kredit Pembayaran Biaya Kuliah Dengan Pendekatan Pembelajaran Mesin</h2>
+                        <p class="card-subtitle text-muted">Arliyanti Nurdin, S.T, M.T</p>
+                        <p class="card-text small text-muted">Kecerdasan Buatan</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">Baca Selengkapnya</a>
+                    </div>
+                </article>
+                <article class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title h6">Computer Vision-Based Corn Seed Quality Detection with Total Variation Deblurring in Conveyor Systems</h2>
+                        <p class="card-subtitle text-muted">Prof. Dr. Ir. Indrabayu, S.T., M.T., M.Bus.Sys., IPM, ASEAN Eng.</p>
+                        <p class="card-text small text-muted">Kecerdasan Buatan</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">Baca Selengkapnya</a>
+                    </div>
+                </article>
+                <article class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title h6">Optimizing Lane Detection in Autonomous Vehicles Using Cascading Attention Mechanisms in DeepLabv3+</h2>
+                        <p class="card-subtitle text-muted">Dr. Muhammad Abdillah Rahmat, S.T, M.T</p>
+                        <p class="card-text small text-muted">Kecerdasan Buatan</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">Baca Selengkapnya</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <aside class="layout-info">
+            <h2 class="info-title">Info Jurnal</h2>
+            <p>Kumpulan artikel ini bersifat ilustratif dan dikembangkan untuk tujuan edukasi.</p>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Portal Jurnal Ilmiah, Fakultas Teknik.</p>
+    </footer>
+</body>
+</html>
