@@ -145,7 +145,7 @@ body {
 }
 
 .footer-text {
-    color: #7c7e80;
+    color: #b8bcc0;
     margin: auto;
 }
 
@@ -155,5 +155,4 @@ body {
     text-align: center;
     font-size: 0.85rem;
     color: #6b7280;
-    border-radius: 12px;
 }
