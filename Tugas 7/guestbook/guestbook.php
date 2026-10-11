@@ -92,5 +92,119 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     }
-
 }
+
+try {
+    $daftarPesan = $guestBook->ambilSemuaPesan();
+} catch (PDOException $e) {
+    $daftarPesan = [];
+    $errors[] = 'Daftar pesan gagal dimuat.';
+}
+
+function escapeHtml(string $teks): string
+{
+    return htmlspecialchars(
+        $teks,
+        ENT_QUOTES | ENT_SUBSTITUTE,
+        'UTF-8'
+    );
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Buku Tamu Perpustakaan</title>
+</head>
+<body>
+
+    <h1>Buku Tamu Perpustakaan</h1>
+
+    <p>Silakan tuliskan pesan atau kesan kamu.</p>
+
+<?php if ($successMessage !== ''): ?>
+    <p><?= escapeHtml($successMessage) ?></p>
+<?php endif; ?>
+
+<?php if (!empty($errors)): ?>
+    <ul>
+        <?php foreach ($errors as $error): ?>
+            <li><?= escapeHtml($error) ?></li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
+
+<h2>Tulis Pesan</h2>
+
+<form method="POST" action="">
+    <input
+        type="hidden"
+        name="csrf_token"
+        value="<?= escapeHtml($_SESSION['csrf_token']) ?>"
+    >
+
+    <label for="nama">Nama:</label><br>
+    <input
+        type="text"
+        id="nama"
+        name="nama"
+        maxlength="100"
+        value="<?= escapeHtml($nama) ?>"
+        required
+    ><br><br>
+
+    <label for="email">Email:</label><br>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        maxlength="254"
+        value="<?= escapeHtml($email) ?>"
+        required
+    ><br><br>
+
+    <label for="pesan">Pesan:</label><br>
+    <textarea
+        id="pesan"
+        name="pesan"
+        minlength="5"
+        required
+    ><?= escapeHtml($pesan) ?></textarea><br><br>
+
+    <button type="submit">Kirim Pesan</button>
+</form>
+<h2>Daftar Pesan</h2>
+
+<table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Pesan</th>
+            <th>Tanggal Kirim</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <?php if (empty($daftarPesan)): ?>
+            <tr>
+                <td colspan="5">Belum ada pesan.</td>
+            </tr>
+        <?php else: ?>
+            <?php foreach ($daftarPesan as $data): ?>
+                <tr>
+                    <td><?= escapeHtml((string) $data['id']) ?></td>
+                    <td><?= escapeHtml($data['nama']) ?></td>
+                    <td><?= escapeHtml($data['email']) ?></td>
+                    <td><?= escapeHtml($data['pesan']) ?></td>
+                    <td><?= escapeHtml($data['tanggal_kirim']) ?></td>
+                </tr>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </tbody>
+</table>
+</body>
+</html>
